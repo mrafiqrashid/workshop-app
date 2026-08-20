@@ -1,6 +1,6 @@
-import Link from "next/link";
 import BrandHeader from "@/components/BrandHeader";
 import { brand } from "@/lib/config/brand";
+import Link from "next/link";
 
 // ─────────────────────────────────────────────────────────────
 // HOMEPAGE CONTENT — safe to customize in Module 4.
@@ -26,7 +26,18 @@ type SectionId = (typeof SECTION_ORDER)[number];
 
 const sections: Record<SectionId, React.ReactNode> = {
   hero: (
-    <section key="hero" className="px-4 py-16 text-center">
+    <section key="hero" className="relative overflow-hidden px-4 py-16 text-center">
+      <span className="rocket-fly" aria-hidden="true">
+        🚀
+      </span>
+      <img
+        src="https://apiuat.timetecbuilding.com/images/logo/ineighbour_logo.png"
+        alt=""
+        aria-hidden="true"
+        width={100}
+        height={22}
+        className="logo-fly"
+      />
       {brand.showWorkshopBadge && (
         <span className="mb-4 inline-block rounded-full border border-gray-300 px-3 py-1 text-xs text-gray-600">
           Built at the TimeTec AI Workshop

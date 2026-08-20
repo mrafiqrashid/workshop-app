@@ -16,3 +16,73 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+@keyframes rocket-fly {
+  0%,
+  100% {
+    transform: translate(85vw, 20px);
+  }
+  12.5% {
+    transform: translate(73.3vw, 62px);
+  }
+  25% {
+    transform: translate(45vw, 80px);
+  }
+  37.5% {
+    transform: translate(16.7vw, 62px);
+  }
+  50% {
+    transform: translate(5vw, 20px);
+  }
+  62.5% {
+    transform: translate(16.7vw, -22px);
+  }
+  75% {
+    transform: translate(45vw, -40px);
+  }
+  87.5% {
+    transform: translate(73.3vw, -22px);
+  }
+}
+
+.rocket-fly {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  font-size: 2rem;
+  line-height: 1;
+  animation: rocket-fly 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes logo-drift {
+  0% {
+    transform: translate(5vw, 30px);
+  }
+  20% {
+    transform: translate(70vw, -30px);
+  }
+  35% {
+    transform: translate(30vw, 70px);
+  }
+  55% {
+    transform: translate(90vw, 10px);
+  }
+  70% {
+    transform: translate(15vw, -50px);
+  }
+  85% {
+    transform: translate(55vw, 90px);
+  }
+  100% {
+    transform: translate(5vw, 30px);
+  }
+}
+
+.logo-fly {
+  position: absolute;
+  top: 55%;
+  left: 0;
+  animation: logo-drift 8s ease-in-out infinite;
+  pointer-events: none;
+}

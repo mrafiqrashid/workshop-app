@@ -2,9 +2,9 @@ import { redirect } from "next/navigation";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import BrandHeader from "@/components/BrandHeader";
 import BackendNotConnected from "@/components/BackendNotConnected";
-import MenuClient from "@/components/MenuClient";
+import OrderHistoryClient from "@/components/OrderHistoryClient";
 
-export default async function AppPage() {
+export default async function OrdersPage() {
   const supabase = await getSupabaseServerClient();
 
   // Modules 1–4: no backend yet — show the page shell, not a crash.
@@ -13,7 +13,7 @@ export default async function AppPage() {
       <div className="min-h-screen bg-white">
         <BrandHeader />
         <main className="mx-auto max-w-2xl px-4 py-10">
-          <h1 className="text-2xl font-bold">Menu</h1>
+          <h1 className="text-2xl font-bold">My orders</h1>
           <div className="mt-4">
             <BackendNotConnected />
           </div>
@@ -28,14 +28,5 @@ export default async function AppPage() {
   } = await supabase.auth.getUser();
   if (!user) redirect("/login");
 
-  // The menu is public data — any signed-in user can read available items.
-  const { data: menuItems } = await supabase
-    .from("menu_items")
-    .select("id, name, description, price, category")
-    .order("category")
-    .order("name");
-
-  return (
-    <MenuClient userId={user.id} userEmail={user.email ?? ""} menuItems={menuItems ?? []} />
-  );
+  return <OrderHistoryClient userEmail={user.email ?? ""} />;
 }

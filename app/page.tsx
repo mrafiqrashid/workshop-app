@@ -7,14 +7,14 @@ import Link from "next/link";
 // Edit the words below, or reorder the sections in SECTION_ORDER.
 // ─────────────────────────────────────────────────────────────
 
-const headline = "Keep track of the stuff that matters.";
+const headline = "Order your favorites in seconds.";
 const subcopy =
-  "A private list that's yours alone. Add notes, ideas and reminders — they're saved securely and only you can see them.";
+  "Browse the menu, add what you're craving to your cart, and place your order — all from one place.";
 
 const howItWorks = [
-  { title: "1. Create an account", text: "Sign up with just an email and a password." },
-  { title: "2. Add your items", text: "Notes, ideas, tasks — anything you want to keep." },
-  { title: "3. Come back anytime", text: "Your list is saved in the cloud, private to you." },
+  { title: "1. Browse the menu", text: "See what's available and pick your favorites." },
+  { title: "2. Add to cart & order", text: "Choose quantities and place your order in one click." },
+  { title: "3. Track your order", text: "Watch it move from pending to ready, right from your account." },
 ];
 
 // Reorder these to change the page layout (Module 4 layout edit).

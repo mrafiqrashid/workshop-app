@@ -8,7 +8,7 @@ export const brand = {
   name: "mrafiqrashid's stuff",
 
   /** One-line tagline shown under the name on the homepage. */
-  tagline: "Your private list of everything that matters.",
+  tagline: "Order what you're craving, whenever you want.",
 
   /** Main accent color (any CSS color, e.g. "#4f46e5" or "rebeccapurple"). */
   primaryColor: "#4f46e5",
